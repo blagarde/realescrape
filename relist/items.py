@@ -12,10 +12,7 @@ class Property(Item):
     url = Field()
     cost = Field()
     size = Field()
+    ppsqm = Field()
     postcode = Field()
+    title = Field()
     description = Field()
-    
-    @property
-    def ppsqm(self):
-    	'''Price per square meter'''
-        return float(self.cost) / self.size
