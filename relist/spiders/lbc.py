@@ -19,6 +19,7 @@ class LBCSpider(CrawlSpider):
     def parse_ad(self, response):
         pty = Property()
         pty['url'] = response.url
+        pty['listed_on'] = 'lbc'
 
         # Price
         prices = response.css('span.price').xpath('text()').extract()

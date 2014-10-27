@@ -15,4 +15,5 @@ class Property(Item):
     ppsqm = Field()
     postcode = Field()
     title = Field()
+    listed_on = Field()
     description = Field()
