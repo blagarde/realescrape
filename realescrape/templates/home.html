@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block adlisting %}
+
+<div class="listing">
+    <h2>Ad listing</h2>
+    <ul>
+        {% for p in properties %}
+        <li>{{p}}</li>
+        {% endfor %}
+    </ul>
+
+</div>
+
+{% endblock %}

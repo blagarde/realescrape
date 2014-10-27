@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        Property listing
+    </title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                {% block adlisting %}
+                {% endblock %}
+            </div>
+            <div class="col-md-9">
+                <iframe id="adpane" src="about:blank"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
