@@ -1,5 +1,7 @@
-div>.adlisting {
-    height:100%;
+
+div.adlisting {
+    height:100vh;
+    overflow-y:scroll;
 }
 
 .adpane{
@@ -14,4 +16,7 @@ li {
 }
 li.zebra {
     background-color: #DDDDDD;
+}
+li.selected {
+    background-color: #FFEEBB;
 }

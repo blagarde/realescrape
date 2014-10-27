@@ -4,6 +4,7 @@
 myApp.controller('homeCtrl', ['$scope', '$http', '$sce', function($scope, $http, $sce){
     $scope.display = function(index){
         console.log($scope.data[index].url);
+        $scope.currentIndex = index;
         $scope.currentAdUrl = $sce.trustAsResourceUrl($scope.data[index].url);
     }
     $http.get('restapi:/list').success(function(data){
@@ -17,6 +18,7 @@ myApp.controller('homeCtrl', ['$scope', '$http', '$sce', function($scope, $http,
     $scope.remove = function(index){
         $http.post('restapi:/remove', {url: $scope.data[index].url})
             .success(function(){
+                $scope.currentIndex = undefined;
                 $scope.data.splice(index, 1);
                 console.log('blacklisted: ' + $scope.data[index].url);
             }).error(function (data, status, headers, config) {
