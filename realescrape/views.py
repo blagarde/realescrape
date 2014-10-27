@@ -40,3 +40,12 @@ def remove(request):
     pty.blacklisted = timezone.now()
     pty.save()
     return "Property blacklisted"
+
+
+@add_headers
+def star(request):
+    url = request.POST['url']
+    pty = Property.objects.get(url=url)
+    pty.star = not pty.star
+    pty.save()
+    return pty.star
