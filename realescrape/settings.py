@@ -83,5 +83,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
+CORS_ORIGIN_WHITELIST = ('localhost:8001',)
 BLACKLIST_FILENAME = os.path.join(BASE_DIR, "blacklist.txt")

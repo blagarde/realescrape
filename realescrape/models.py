@@ -22,7 +22,7 @@ class Property(Model):
     listed_on = CharField(max_length=15)
 
     unread = BooleanField(default=True)
-    blacklisted = DateTimeField(auto_now=True, null=True)
+    blacklisted = DateTimeField(null=True, blank=True)
     star = BooleanField(default=False)
 
     @property
@@ -32,7 +32,7 @@ class Property(Model):
     @property
     def display(self):
         contents = unidecode(self.title.lower()) + unidecode(self.description.lower())
-        return not any([regex.search(contents) is not None for regex in BLACKLIST])
+        return not any([regex.search(contents) is not None for regex in BLACKLIST]) and not self.blacklisted
 
     def as_dict(self, fields="url price description title postcode star size ppsqm unread".split(' ')):
         return {f:getattr(self, f) for f in fields}
