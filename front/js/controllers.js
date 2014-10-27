@@ -36,4 +36,8 @@ myApp.controller('homeCtrl', ['$scope', '$http', '$sce', function($scope, $http,
                 $scope.data[index].star = (data === "True");
             });
     }
+
+    $scope.toggle_starred = function(){
+        $scope.starred_only = !$scope.starred_only;
+    }
 }]);

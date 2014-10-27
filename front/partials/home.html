@@ -2,8 +2,12 @@
     <div class="row">
         <div class="col-md-3 adlisting">
             <h2>Ad listing ({{data.length}} ads)</h2>
+            <span ng-click="toggle_starred()">{{starred_only?"Show all":"Show starred only"}}</span>
             <ul>
-                <li ng-repeat="elt in data" class="{{$even?'zebra':''}}{{($index === currentIndex)?' selected':''}}" ng-click="display($index)">
+                <li ng-repeat="elt in data"
+                    class="{{$even?'zebra':''}}{{($index === currentIndex)?' selected':''}}"
+                    ng-click="display($index)"
+                    ng-show="elt.star || !starred_only">
                     <span ng-click="remove($index)" class="glyphicon glyphicon-remove"></span>
                     <span>{{elt.title}}</span><br/>
                     <span>({{elt.ppsqm | number: 0}} EUR/sqm)</span>
