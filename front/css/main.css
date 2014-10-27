@@ -1,0 +1,17 @@
+div>.adlisting {
+    height:100%;
+}
+
+.adpane{
+    height:100%;
+}
+iframe.adpane {
+    width:100%;
+}
+
+li {
+    list-style: none;
+}
+li.zebra {
+    background-color: #DDDDDD;
+}
