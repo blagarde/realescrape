@@ -4,6 +4,10 @@ div.adlisting {
     overflow-y:scroll;
 }
 
+div.adlisting ul{
+    padding:0;
+}
+
 .adpane{
     height:100%;
 }
