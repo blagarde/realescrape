@@ -23,7 +23,7 @@ class LBCSpider(CrawlSpider):
         # Price
         prices = response.css('span.price').xpath('text()').extract()
         assert len(prices) == 1
-        pty['cost'] = int(prices[0].rstrip(u' $\u20ac').replace(' ', ''))
+        pty['price'] = int(prices[0].rstrip(u' $\u20ac').replace(' ', ''))
 
         # Surface
         row = response.css('.lbcParams.criterias').xpath("//tr[contains(th//text(), 'Surface')]")
@@ -42,7 +42,7 @@ class LBCSpider(CrawlSpider):
         pty['description'] = ' '.join(response.css('div.AdviewContent div.content').xpath('text()').extract())
 
         # Price per square meter
-        pty['ppsqm'] = float(pty['cost']) / pty['size']
+        pty['ppsqm'] = float(pty['price']) / pty['size']
 
         return pty
     

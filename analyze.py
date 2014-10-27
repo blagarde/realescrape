@@ -7,7 +7,7 @@ from unidecode import unidecode
 import re
 
 
-SCRAPED_FIELDS = "url cost size description title postcode".split(' ')
+SCRAPED_FIELDS = "url price size description title postcode".split(' ')
 ALL_FIELDS = SCRAPED_FIELDS + ['ppsqm']
 
 

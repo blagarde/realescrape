@@ -10,7 +10,7 @@ from scrapy import Field, Item
 
 class Property(Item):
     url = Field()
-    cost = Field()
+    price = Field()
     size = Field()
     ppsqm = Field()
     postcode = Field()
