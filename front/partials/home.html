@@ -19,4 +19,8 @@
             <iframe class="adpane" src="{{currentAdUrl}}"></iframe>
         </div>
     </div>
+    <div class="notepad" ng-show="currentAdUrl !== undefined">
+        <textarea ng-model="currentText"></textarea>
+        <button class="save glyphicon glyphicon-floppy-disk" ng-click="save_notes()"/>
+    </div>
 </div>

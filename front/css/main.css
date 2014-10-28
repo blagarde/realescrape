@@ -24,3 +24,21 @@ li.zebra {
 li.selected {
     background-color: #FFEEBB;
 }
+
+div.notepad{
+    width:300px;
+    height:200px;
+    position:absolute;
+    bottom:0px;
+    right:0px;
+}
+
+div.notepad textarea{
+    height:100%;
+    width: 100%;
+}
+div.notepad button.save{
+    position:absolute;
+    right:0px;
+    bottom:0px;
+}

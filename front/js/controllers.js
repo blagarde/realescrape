@@ -5,6 +5,7 @@ myApp.controller('homeCtrl', ['$scope', '$http', '$sce', function($scope, $http,
     $scope.display = function(index){
         console.log($scope.data[index].url);
         $scope.currentIndex = index;
+        $scope.currentText = $scope.data[index].notes;
         $scope.currentAdUrl = $sce.trustAsResourceUrl($scope.data[index].url);
     }
     $http.get('restapi:/list').success(function(data){
@@ -39,5 +40,14 @@ myApp.controller('homeCtrl', ['$scope', '$http', '$sce', function($scope, $http,
 
     $scope.toggle_starred = function(){
         $scope.starred_only = !$scope.starred_only;
+    }
+
+    $scope.save_notes = function() {
+        $http.post('restapi:/savenotes', {
+            url: $scope.data[$scope.currentIndex].url,
+            notes: $scope.currentText
+        }).success(function(){
+            $scope.data[$scope.currentIndex].notes = $scope.currentText;
+        });
     }
 }]);

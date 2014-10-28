@@ -49,3 +49,12 @@ def star(request):
     pty.star = not pty.star
     pty.save()
     return pty.star
+
+@add_headers
+def save_notes(request):
+    url = request.POST['url']
+    pty = Property.objects.get(url=url)
+    changed = (pty.notes != request.POST['notes'])
+    pty.notes = request.POST['notes']
+    pty.save()
+    return str(changed)

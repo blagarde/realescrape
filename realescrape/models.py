@@ -24,6 +24,7 @@ class Property(Model):
     unread = BooleanField(default=True)
     blacklisted = DateTimeField(null=True, blank=True)
     star = BooleanField(default=False)
+    notes = TextField(default="")
 
     @property
     def ppsqm(self):
@@ -34,7 +35,7 @@ class Property(Model):
         contents = unidecode(self.title.lower()) + unidecode(self.description.lower()).replace('\n', ' ')
         return not any([regex.search(contents) is not None for regex in BLACKLIST]) and not self.blacklisted
 
-    def as_dict(self, fields="url price description title postcode star size ppsqm unread".split(' ')):
+    def as_dict(self, fields="url price description title postcode star size ppsqm unread notes".split(' ')):
         return {f:getattr(self, f) for f in fields}
 
     def __unicode__(self):
