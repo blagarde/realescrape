@@ -8,7 +8,7 @@ import re
 URL_TEMPLATE = "http://www.pap.fr/annonce/vente-appartements-paris-12e-g%s-jusqu-a-400000-euros-a-partir-de-40-m2"
 
 
-class LBCSpider(CrawlSpider):
+class PAPSpider(CrawlSpider):
 
     name = 'pap'
     allowed_domains = ['pap.fr']
