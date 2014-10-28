@@ -31,7 +31,7 @@ class Property(Model):
 
     @property
     def display(self):
-        contents = unidecode(self.title.lower()) + unidecode(self.description.lower())
+        contents = unidecode(self.title.lower()) + unidecode(self.description.lower()).replace('\n', ' ')
         return not any([regex.search(contents) is not None for regex in BLACKLIST]) and not self.blacklisted
 
     def as_dict(self, fields="url price description title postcode star size ppsqm unread".split(' ')):
