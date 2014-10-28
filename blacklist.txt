@@ -29,8 +29,7 @@ st gervais
 st-blaise
 ourcq
 danube
-saint-fargeau
-saint fargeau
+fargeau
 pelleport
 bagnolet
 maraichers
@@ -48,3 +47,5 @@ davout
  tram 
 championnet
 michel bizot
+damremont
+gambetta
