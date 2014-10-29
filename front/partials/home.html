@@ -12,6 +12,7 @@
                     <span>{{elt.title}}</span><br/>
                     <span>({{elt.ppsqm | number: 0}} EUR/sqm)</span>
                     <span ng-click="star($index)" class="glyphicon glyphicon-star{{elt.star?'':'-empty'}}"></span>
+                    <span ng-show="elt.notes" class="glyphicon glyphicon-list-alt"></span>
                 </li>
             </ul>
         </div>
