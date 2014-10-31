@@ -17,7 +17,8 @@
             </ul>
         </div>
         <div class="col-md-9 adpane">
-            <iframe class="adpane" src="{{currentAdUrl}}"></iframe>
+            <iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                class="adpane" src="{{currentAdUrl}}"></iframe>
         </div>
     </div>
     <div class="notepad" ng-show="currentAdUrl !== undefined">
