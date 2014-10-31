@@ -9,7 +9,7 @@ URL_TEMPLATE = "http://www.leboncoin.fr/ventes_immobilieres/offres/ile_de_france
 
 class LBCSpider(CrawlSpider):
 
-    name = 'leboncoin'
+    name = 'lbc'
     allowed_domains = ['leboncoin.fr']
     start_urls = [URL_TEMPLATE % postcode for postcode in "75010 75011 75012 75018 75019 75020".split(' ')]
     regex = r'http://www\.leboncoin\.fr/ventes_immobilieres/\d+.htm\?ca=12_s'
@@ -19,7 +19,7 @@ class LBCSpider(CrawlSpider):
     def parse_ad(self, response):
         pty = Property()
         pty['url'] = response.url
-        pty['listed_on'] = 'lbc'
+        pty['listed_on'] = self.name
 
         # Price
         prices = response.css('span.price').xpath('text()').extract()
