@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     url(r'^star$', 'realescrape.views.star', name='star'),
     url(r'^savenotes$', 'realescrape.views.save_notes', name='save_notes'),
     url(r'^remove$', 'realescrape.views.remove', name='remove'),
-    # url(r'^blog/', include('blog.urls')),
+    url(r'^scrape$', 'realescrape.views.scrape', name='scrape'),
 
     url(r'^admin/', include(admin.site.urls)),
 )

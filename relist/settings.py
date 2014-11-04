@@ -15,3 +15,12 @@ NEWSPIDER_MODULE = 'relist.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'relist (+http://www.yourdomain.com)'
+
+ITEM_PIPELINES = {
+    'relist.pipelines.DjangoPipeline': 300,
+}
+
+import os
+os.environ['DJANGO_SETTINGS_MODULE'] = 'realescrape.settings'
+import django
+django.setup()

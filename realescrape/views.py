@@ -4,7 +4,7 @@ from realescrape.models import Property
 from json import dumps
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
-import json
+from scraper import Scraper
 
 
 def add_headers(view):
@@ -58,3 +58,9 @@ def save_notes(request):
     pty.notes = request.POST['notes']
     pty.save()
     return str(changed)
+
+@add_headers
+def scrape(request):
+    #sites = request.POST['sites']
+    Scraper()
+    return "Done!"
