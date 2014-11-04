@@ -1,4 +1,4 @@
-from django.db.models import Model, CharField, DateTimeField, FloatField, TextField, BooleanField, IntegerField
+from django.db.models import Model, CharField, DateTimeField, FloatField, TextField, BooleanField, IntegerField, ForeignKey
 from django.core.serializers import serialize
 from django.conf import settings
 from codecs import open as copen
@@ -9,6 +9,10 @@ import re
 BLACKLIST = [re.compile(unidecode(l.rstrip('\n').lower())) for l in copen(settings.BLACKLIST_FILENAME, 'r', encoding='utf8')]
 
 
+class Load(Model):
+    timestamp = DateTimeField(auto_now=True)
+
+
 class Property(Model):
     url = CharField(max_length=200, unique=True)
     price = FloatField()
@@ -16,6 +20,7 @@ class Property(Model):
     description = TextField()
     title = TextField()
     postcode = IntegerField()
+    load = ForeignKey(Load)
     
     updated = DateTimeField(auto_now=True)
     phone = CharField(max_length=15)
