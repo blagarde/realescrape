@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
 
     selected = 0
-    with copen('out.json', 'r', encoding='utf8') as fh:
+    with copen(args.infile, 'r', encoding='utf8') as fh:
         properties = [Property(**dct) for dct in load(fh)]
         for p in properties:
             if p.display(blacklist):
