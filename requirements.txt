@@ -8,7 +8,7 @@ attrs==16.3.0
 constantly==15.1.0
 cssselect==1.0.1
 incremental==16.10.1
-lxml==3.7.3
+lxml==4.6.2
 parsel==1.1.0
 pyOpenSSL==16.2.0
 queuelib==1.4.2
